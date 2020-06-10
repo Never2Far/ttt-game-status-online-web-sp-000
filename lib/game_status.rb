@@ -40,10 +40,10 @@ end
 
 
 def draw?(board)
-  if board.full? && !board.won?
-    return true
-  else
+  if (board.won?) || !(board.full? && board.won?)
     return false
+  else
+    return true
   end
 end
 # ##board.map.with_index { |value, index|
