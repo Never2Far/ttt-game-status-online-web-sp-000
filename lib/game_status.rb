@@ -24,7 +24,7 @@ def won?(board)
   ohperms = ohs.permutation(3).to_a
   x_winning_index = WIN_COMBINATIONS.detect{ |win_combo| experms.include?(win_combo) }
   o_winning_index = WIN_COMBINATIONS.detect{ |win_combo| ohperms.include?(win_combo) }
-#if ((x_winning_index == false) || (x_winning_index == nil)) && ((o_winning_index == false) || (o_winning_index == nil))
+
 
   if (!!x_winning_index && !!o_winning_index)
     return false
@@ -57,19 +57,12 @@ end
 end
 
 def winner(board)
-  if won?(board)[0] == "X"
-    return "X"
-  elsif won?(board)[0] == "O"
-    return "O"
-  else
+  if won?(board)
+    return board[won?(board)[0]]
+  #elsif won?(board)[0] == "O"
+    #return "O"
+  #elsif won?(board)[0] == "X"
+else
     return nil
   end
 end
-# ##board.map.with_index { |value, index|
-#
-# }
-# exes = each_with_index(board) { |value, index|
-#
-# }
-# ohs
-#   each_with_index(board) { |}
