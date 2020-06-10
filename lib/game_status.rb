@@ -14,7 +14,7 @@ WIN_COMBINATIONS = [
   [2,4,6]   # Diagonal 2 (positive slope)
 ]
 
-Winner = nil
+$winner = nil
 
 def won?(board)
 
@@ -30,10 +30,10 @@ def won?(board)
   if (!!x_winning_index && !!o_winning_index)
     return false
   elsif x_winning_index
-       Winner = "X"
+       winner = "X"
        return x_winning_index
   elsif o_winning_index
-       Winner = "O"
+       winner = "O"
        return o_winning_index
     end
   end
@@ -61,7 +61,7 @@ end
 
 def winner(board)
   won?(board)
-  return Winner
+  return winner
 end
 # ##board.map.with_index { |value, index|
 #
