@@ -14,6 +14,8 @@ WIN_COMBINATIONS = [
   [2,4,6]   # Diagonal 2 (positive slope)
 ]
 
+winner = nil
+
 def won?(board)
 
   exes = board.each_index.select{ |i| board[i] == "X"}
@@ -28,8 +30,10 @@ def won?(board)
   if (!!x_winning_index && !!o_winning_index)
     return false
   elsif x_winning_index
+       winner = "X"
        return x_winning_index
   elsif o_winning_index
+       winner = "O"
        return o_winning_index
     end
   end
@@ -53,6 +57,11 @@ if full?(board) || won?(board) || draw?(board)
 else
   return false
 end
+end
+
+def winner?(board)
+  won?(board)
+  return winner
 end
 # ##board.map.with_index { |value, index|
 #
