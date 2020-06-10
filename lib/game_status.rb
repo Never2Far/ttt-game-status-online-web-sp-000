@@ -59,7 +59,7 @@ else
 end
 end
 
-def winner?(board)
+def winner(board)
   won?(board)
   return winner
 end
